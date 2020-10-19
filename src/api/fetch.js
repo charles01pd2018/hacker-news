@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+const handleFetchStories = React.useCallback(async () => {
 
-export default handleFetchStories = React.useCallback(async () => {
     dispatchStories({type: 'STORIES_FETCH_INIT'});
 
     try {
@@ -20,3 +20,5 @@ export default handleFetchStories = React.useCallback(async () => {
         })
     }
     }, [url]);
+
+export default handleFetchStories
