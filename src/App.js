@@ -10,10 +10,7 @@ import useSemiPersistentState from './hooks/use-semi';
 import storiesReducer from './hooks/stories-reducer';
 
 // api
-
-// styling
-import styles from './scss/App.css';
-
+import './scss/app.scss'
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query='
 
@@ -71,10 +68,10 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className='container'>
 
-      <div>
-      <h1>Hacker Stories</h1>
+      <div className='headlinePrimary'>
+        <h1>Hacker Stories</h1>
       </div>
 
       <SearchForm

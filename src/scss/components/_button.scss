@@ -1,0 +1,30 @@
+.button {
+  
+    background: transparent;
+    padding-left: 0.5rem;
+    cursor: pointer;
+
+    transition: all 0.1s ease-in;
+
+    :hover {
+        background: grey;
+        color: #ffffff;
+      }
+    
+    .buttonSmall {
+        padding: 5px;
+    }
+
+    .buttonLarge {
+        padding: 10px;
+        display: flex;
+    }
+  }
+  
+
+  
+  
+  
+  
+  
+  

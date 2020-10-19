@@ -1,7 +1,8 @@
 import React from 'react'
 
 
-const useSemiPersistentState = (key, initialState) => {
+let useSemiPersistentState = (key, initialState) => {
+  
     const [value, setValue] = React.useState(
       localStorage.getItem(key) || initialState
     );

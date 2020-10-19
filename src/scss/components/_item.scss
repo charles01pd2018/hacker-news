@@ -1,0 +1,27 @@
+.item {
+    
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    .itemLink {
+        white-space: nowrap;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    .itemAuthor {
+        padding-left: 0.3rem;
+    }
+
+    .itemNumComments {
+        padding-left: 0.3rem;
+        font-size: 12px;
+    }
+
+    .itemPoints {
+        padding-left: 0.3rem;
+    }
+  }
