@@ -1,3 +1,3 @@
 # Hacker News App 
 
-## Learning React from Educative Course
+Learning React from Educative Course
