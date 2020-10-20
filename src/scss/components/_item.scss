@@ -1,5 +1,5 @@
 .item {
-    
+
     display: flex;
     align-items: center;
     padding-left: 0.5rem;
@@ -16,12 +16,13 @@
         padding-left: 0.3rem;
     }
 
+    .itemPoints {
+        padding-left: 0.3rem;
+    }
+
     .itemNumComments {
         padding-left: 0.3rem;
         font-size: 12px;
-    }
-
-    .itemPoints {
-        padding-left: 0.3rem;
+        font-style: italic;
     }
   }

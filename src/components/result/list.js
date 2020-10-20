@@ -1,8 +1,12 @@
+// Represents a compiled list of items to display
+
 import React from 'react';
-import Item from './item'
+
+// components
+import Item from './item';
 
 
-const List = ({ list, onRemoveItem }) =>
+let List = ({ list, onRemoveItem }) =>
 
   list.map(item => (
     <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />

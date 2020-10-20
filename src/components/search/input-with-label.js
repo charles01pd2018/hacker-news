@@ -1,15 +1,21 @@
+// Represents the input field and the label alongside it
+
 import React from 'react';
-import '../../scss/components/_search.scss'
+
+// styles
+import '../../scss/components/_search.scss';
 
 
-const InputWithLabel = ({id, value, type = 'text', onInputChange, isFocused, children}) => {
+let InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, children }) => {
 
-  const inputRef = React.useRef();
+  let inputRef = React.useRef()
 
-  React.useEffect(() => { if (isFocused) inputRef.current.focus() }, [isFocused]);
+  React.useEffect(() => { if (isFocused) inputRef.current.focus() }, [isFocused]) // storing the search input focus state
 
   return (
+
     <div className='label'>
+
       <label htmlFor={id}>{children}</label>
 
       &nbsp;

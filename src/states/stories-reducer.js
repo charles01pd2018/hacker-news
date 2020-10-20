@@ -1,4 +1,6 @@
-const storiesReducer = (state, action) => {
+//  Returns the appropriate object based off the fetched data
+
+let storiesReducer = (state, action) => {
 
     switch (action.type) {
       case 'STORIES_FETCH_INIT':

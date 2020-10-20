@@ -1,10 +1,13 @@
+// Represents an item based off the retrieved data
+
 import React from 'react';
+
+// styles
 import '../../scss/components/_item.scss';
 import '../../scss/components/_button.scss';
 
 
-
-const Item = ({ item, onRemoveItem }) => (
+let Item = ({ item, onRemoveItem }) => (
 
     <div className='item'>
 
@@ -13,8 +16,8 @@ const Item = ({ item, onRemoveItem }) => (
       </span>
 
       <span className='itemAuthor'>({item.author})</span>
-      <span className='itemNumComments'>{item.num_comments}</span>
       <span className='itemPoints'>{item.points}</span>
+      <span className='itemNumComments'>{item.num_comments}</span>
 
       <span className='button'>
         <button className='buttonSmall' type="button" onClick={() => onRemoveItem(item)}>Dismiss</button>

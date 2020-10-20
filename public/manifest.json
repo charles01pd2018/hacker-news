@@ -7,6 +7,10 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "500x500"
+    },
+    {
+      "src": "logo.svg",
+      "type": "vector/svg"
     }
   ],
   "start_url": ".",
