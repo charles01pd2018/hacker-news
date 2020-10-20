@@ -6,8 +6,9 @@ import SearchForm from './components/search/search-form';
 import List from './components/result/list';
 
 // states
-import useSemiPersistentState from './states/use-semi';
-import storiesReducer from './states/stories-reducer';
+import useSemiPersistentState from './states/helper/use-semi';
+import storiesReducer from './states/helper/stories-reducer';
+//import handleFetchStories from './states/api/fetch';
 
 // styles
 import './scss/app.scss';
@@ -46,14 +47,11 @@ let App = () => {
   }, [url])
 
 
-  React.useEffect(() => {
-    handleFetchStories()
-  }, [handleFetchStories])
+  React.useEffect(() => { handleFetchStories() }, [ handleFetchStories ] )
 
   
-  const handleRemoveStory = item => {
-    dispatchStories({
-      type: 'REMOVE_STORY',
+  const handleRemoveStory = item => { dispatchStories({
+  type: 'REMOVE_STORY',
       payload: item,
     })
   }
@@ -78,24 +76,22 @@ let App = () => {
         <h1>Hacker Stories</h1>
       </div>
 
-      <SearchForm
-        searchTerm={searchTerm}
-        onSearchInput={handleSearchInput}
-        onSearchSubmit={handleSearchSubmit}
-      />
+      <SearchForm searchTerm={searchTerm} onSearchInput={handleSearchInput} onSearchSubmit={handleSearchSubmit} />
 
       <hr />
 
       {stories.isError && <p>Something went wrong ...</p>}
 
-      {stories.isLoading ? (
-        <div>
-          <p>Loading ...</p>
-        </div>
+      {stories.isLoading ? 
 
-      ) : (
-        <List list={stories.data} onRemoveItem={handleRemoveStory} />
-      )}
+       ( <span>
+          <p>Loading ...</p>
+        </span> )
+
+       : 
+
+       ( <List list={stories.data} onRemoveItem={handleRemoveStory} /> )
+      }
     </div>
   )
 }

@@ -1,7 +1,10 @@
+// Fetches the data from the API and returns it
+
 import React from 'react';
 import axios from 'axios';
 
-const handleFetchStories = React.useCallback(async () => {
+
+const handleFetchStories = (url, dispatchStories) => React.useCallback(async () => {
 
     dispatchStories({type: 'STORIES_FETCH_INIT'});
 
