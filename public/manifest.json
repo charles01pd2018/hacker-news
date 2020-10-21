@@ -1,7 +1,7 @@
 {
   "short_name": "Hacker News",
-  "name": "Hacker News App",
-  "description": "List of hacker stories",
+  "name": "Hacker News",
+  "description": "Hacker News Delivered Just For You!",
   "icons": [
     {
       "src": "logo.png",

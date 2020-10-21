@@ -18,8 +18,6 @@ let InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, chil
 
       <label htmlFor={id}>{children}</label>
 
-      &nbsp;
-
       <span className='input'>
         <input ref={inputRef} id={id} type={type} value={value} onChange={onInputChange} />
       </span>

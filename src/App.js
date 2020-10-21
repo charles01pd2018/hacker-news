@@ -8,7 +8,6 @@ import List from './components/result/list';
 // states
 import useSemiPersistentState from './states/helper/use-semi';
 import storiesReducer from './states/helper/stories-reducer';
-//import handleFetchStories from './states/api/fetch';
 
 // styles
 import './scss/app.scss';
@@ -21,12 +20,12 @@ let App = () => {
 
   let [searchTerm, setSearchTerm] = useSemiPersistentState('search', '')
 
-  let [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`)
+  let [url, setUrl] = React.useState( `${API_ENDPOINT}${searchTerm}` )
 
   let [stories, dispatchStories] = React.useReducer( storiesReducer, { data: [], isLoading: false, isError: false } )
 
 
-  const handleFetchStories = React.useCallback(async () => {
+  let handleFetchStories = React.useCallback(async () => {
 
     dispatchStories({ type: 'STORIES_FETCH_INIT' })
 
@@ -50,23 +49,17 @@ let App = () => {
   React.useEffect(() => { handleFetchStories() }, [ handleFetchStories ] )
 
   
-  const handleRemoveStory = item => { dispatchStories({
-  type: 'REMOVE_STORY',
-      payload: item,
-    })
-  }
+  let handleRemoveStory = item => { dispatchStories( { type: 'REMOVE_STORY', payload: item } ) }
 
 
-  const handleSearchInput = event => {
-    setSearchTerm(event.target.value)
-  }
+  let handleSearchInput = event => { setSearchTerm(event.target.value) }
 
 
-  const handleSearchSubmit = event => {
-    setUrl(`${API_ENDPOINT}${searchTerm}`)
+  let handleSearchSubmit = event => { 
+    setUrl( `${API_ENDPOINT}${searchTerm}` )
 
     event.preventDefault();
-  };
+  }
 
 
   return (
@@ -96,4 +89,4 @@ let App = () => {
   )
 }
 
-export default App;
+export default App

@@ -5,7 +5,6 @@ import * as serviceWorker from './serviceWorker';
 // styles
 import './scss/index.scss';
 
-// app
 import App from './App';
 
 
