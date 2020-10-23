@@ -12,6 +12,4 @@ let SORTS =  {
     'POINT': list => sortBy(list, 'points'),
 }
 
-console.log(SORTS.map( item => item) )
-
 export default SORTS
