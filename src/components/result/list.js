@@ -7,6 +7,7 @@ import Item from './item';
 import SORTS from './helper/sort';
 
 
+
 let List = ({ list, onRemoveItem }) => {
 
   let [sort, setSort] = React.useState('NONE')
