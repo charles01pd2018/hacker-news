@@ -4,6 +4,7 @@ import axios from 'axios';
 // componenets
 import SearchForm from './components/search/search-form';
 import List from './components/result/list';
+import HeadlinePrimary from './components/headline-primary';
 
 // states
 import useSemiPersistentState from './states/helper/use-semi.tsx';
@@ -66,9 +67,7 @@ let App = () => {
   return (
     <div className='container'>
 
-      <div className='headlinePrimary'>
-        <h1>Hacker Stories</h1>
-      </div>
+      <HeadlinePrimary header_text={'Hacker News Stories'} />
 
       <SearchForm searchTerm={searchTerm} onSearchInput={handleSearchInput} onSearchSubmit={handleSearchSubmit} />
 

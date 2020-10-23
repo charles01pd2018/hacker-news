@@ -10,7 +10,7 @@ import '../../scss/components/_button.scss';
 
 let Item = ({ item, onRemoveItem }) => (
 
-    <div className='item'>
+    <span className='item'>
 
       <span className='itemLink'>
         <a href={item.url}>{item.title}</a>
@@ -24,7 +24,7 @@ let Item = ({ item, onRemoveItem }) => (
         <button className='buttonSmall' type="button" onClick={() => onRemoveItem(item)}>Dismiss</button>
       </span>
 
-    </div>
-  );
+    </span>
+  )
 
 export default Item
