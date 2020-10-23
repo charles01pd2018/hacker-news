@@ -6,7 +6,7 @@ import SearchForm from './components/search/search-form';
 import List from './components/result/list';
 
 // states
-import useSemiPersistentState from './states/helper/use-semi';
+import useSemiPersistentState from './states/helper/use-semi.tsx';
 import storiesReducer from './states/helper/stories-reducer';
 
 // styles
@@ -18,6 +18,7 @@ const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query='
 
 let App = () => {
 
+  // mounting the search term - change 'setSearchTerm" field to input default search term
   let [searchTerm, setSearchTerm] = useSemiPersistentState('search', '')
 
   let [url, setUrl] = React.useState( `${API_ENDPOINT}${searchTerm}` )
@@ -49,7 +50,7 @@ let App = () => {
   React.useEffect(() => { handleFetchStories() }, [ handleFetchStories ] )
 
   
-  let handleRemoveStory = item => { dispatchStories( { type: 'REMOVE_STORY', payload: item } ) }
+  let handleRemoveStory = React.useCallback(item => { dispatchStories( { type: 'REMOVE_STORY', payload: item } ) } )
 
 
   let handleSearchInput = event => { setSearchTerm(event.target.value) }

@@ -7,6 +7,7 @@ import '../../scss/components/_item.scss';
 import '../../scss/components/_button.scss';
 
 
+
 let Item = ({ item, onRemoveItem }) => (
 
     <div className='item'>
