@@ -5,6 +5,7 @@ import axios from 'axios';
 import SearchForm from './components/search/search-form';
 import List from './components/result/list';
 import HeadlinePrimary from './components/headline-primary';
+import SortButtons from './components/sort-buttons';
 
 // states
 import useSemiPersistentState from './states/helper/use-semi.tsx';
@@ -22,11 +23,13 @@ let App = () => {
   // mounting the search term - change 'setSearchTerm" field to input default search term
   let [searchTerm, setSearchTerm] = useSemiPersistentState('search', '')
 
-  let [url, setUrl] = React.useState( `${API_ENDPOINT}${searchTerm}` )
+  // stores the url state depending on the search term
+  let [url, setUrl] = React.useState( `${API_ENDPOINT}${searchTerm}` ) 
 
-  let [stories, dispatchStories] = React.useReducer( storiesReducer, { data: [], isLoading: false, isError: false } )
+  // redeucer for filtering stories after being fetched from api
+  let [stories, dispatchStories] = React.useReducer( storiesReducer, { data: [], isLoading: false, isError: false } ) 
 
-
+  // fetched the stories from the API everytime the user makes a search
   let handleFetchStories = React.useCallback(async () => {
 
     dispatchStories({ type: 'STORIES_FETCH_INIT' })
@@ -47,27 +50,29 @@ let App = () => {
     }
   }, [url])
 
+  // initiates api fetch
+  React.useEffect( () => { handleFetchStories() }, [ handleFetchStories ] )
 
-  React.useEffect(() => { handleFetchStories() }, [ handleFetchStories ] )
-
-  
+  // handles user removing stores with the 'Dismiss' button
   let handleRemoveStory = React.useCallback(item => { dispatchStories( { type: 'REMOVE_STORY', payload: item } ) } )
 
-
+  // handler for storing the search term as a React state
   let handleSearchInput = event => { setSearchTerm(event.target.value) }
 
-
+  // handles the user search submit
   let handleSearchSubmit = event => { 
-    setUrl( `${API_ENDPOINT}${searchTerm}` )
+    setUrl( `${API_ENDPOINT}${searchTerm}` ) 
 
-    event.preventDefault();
+    event.preventDefault() // stops the entire page from reloading
   }
+
+
 
 
   return (
     <div className='container'>
 
-      <HeadlinePrimary header_text={'Hacker News Stories'} />
+      <HeadlinePrimary headerText={'Hacker News Stories'} />
 
       <SearchForm searchTerm={searchTerm} onSearchInput={handleSearchInput} onSearchSubmit={handleSearchSubmit} />
 

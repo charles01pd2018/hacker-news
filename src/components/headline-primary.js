@@ -6,13 +6,13 @@ import React from 'react';
 import '../scss/components/_headline-primary.scss';
 
 
-let HeadlinePrimary = ({ header_text }) => {
+let HeadlinePrimary = ({ headerText }) => {
     
     return (
 
         <div className='headlinePrimary'>
 
-            <h1>{ header_text }</h1>
+            <h1>{ headerText }</h1>
 
         </div>
     ) 

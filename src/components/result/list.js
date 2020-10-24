@@ -4,44 +4,33 @@ import React from 'react';
 
 // components
 import Item from './item';
-import SORTS from './helper/sort';
+import SortButtons from '../sort-buttons';
 
+// objects
+import SORTS from '../../objects/sort';
 
 
 let List = ({ list, onRemoveItem }) => {
 
-  let [sort, setSort] = React.useState('NONE')
+  // stores the sort state of the articles
+  let [sort, setSort] = React.useState('NONE') 
 
-  let handleSort = sortKey => { setSort(sortKey) }
+  // handler for chainging sort state of stories
+  let handleSort = ( sort_key ) => { setSort(sort_key) } 
 
   let sortFunction = SORTS[sort]
   let sortedList = sortFunction(list)
-
-  let sort_buttons = []
-
-  console.log(SORTS)
-  for (var sort_type in SORTS.keys) {
-    sort_buttons.push(
-      <span className='button'>
-        <button className='buttonSmall' type='button' onClick={ () => handleSort(sort_type)}>
-          {sort_type}
-        </button>
-      </span>
-    )
-  }
-  
-  console.log(sort_buttons)
-
   
   
   return ( 
 
     <div>
-      {sort_buttons}
-    {sortedList.map(item => (
-    <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} /> 
-    
-  )) }
+
+      <SortButtons handleSort={handleSort} />
+
+      { sortedList.map(item => (
+      <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} /> )) }
+
     </div>
   )
 }
