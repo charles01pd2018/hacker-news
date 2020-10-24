@@ -18,6 +18,7 @@ let List = ({ list, onRemoveItem }) => {
   // handler for chainging sort state of stories
   let handleSort = ( sort_key ) => { setSort(sort_key) }
 
+  console.log(sort)
   // getting the sorted list from the sort state
   let sortFunction = SORTS[sort]
   let sortedList = sortFunction(list)
@@ -27,7 +28,9 @@ let List = ({ list, onRemoveItem }) => {
 
     <div>
 
-      <SortButtons handleSort={handleSort} />
+      <div className='sortButtons'>
+        <SortButtons handleSort={handleSort}/>
+      </div>
 
       { sortedList.map(item => (
       <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} /> )) }

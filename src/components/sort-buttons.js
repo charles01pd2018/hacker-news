@@ -11,10 +11,8 @@ let SortButtons = (handleSort) => {
     let sort_buttons = []
 
     // skipping the first 'NONE' element
-    for (let sortType in SORTS) {
-
-        console.log(sortType)
-
+    for ( let [sortType, sortFunction] of Object.entries(SORTS).slice(1) ) {
+        
         // pushing sort buttons into the list
         sort_buttons.push(
 

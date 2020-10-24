@@ -7,14 +7,9 @@ import List from './components/result/list';
 import HeadlinePrimary from './components/headline-primary';
 
 
-// states
-
 // state helpers
 import useSemiPersistentState from './states/helper/use-semi.tsx';
 import storiesReducer from './states/helper/stories-reducer';
-
-// handlers
-//import { handleRemoveStory, handleSearchInput, handleSearchSubmit } from './states/handlers.'
 
 // styles
 import './scss/app.scss';
