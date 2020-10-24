@@ -21,7 +21,7 @@ let Item = ({ item, onRemoveItem }) => (
       <span className='itemNumComments'>{item.num_comments}</span>
 
       <span className='button'>
-        <button className='buttonSmall' type="button" onClick={() => onRemoveItem(item)}>Dismiss</button>
+        <button className='buttonSmall' type="button" onClick={ () => onRemoveItem(item) }>Dismiss</button>
       </span>
 
     </span>

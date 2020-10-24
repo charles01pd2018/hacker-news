@@ -13,12 +13,12 @@ import SORTS from '../../objects/sort';
 let List = ({ list, onRemoveItem }) => {
 
   // stores the sort state of the articles
-  let [sort, setSort] = React.useState('NONE') 
+  let [sort, setSort] = React.useState('NONE')
 
   // handler for chainging sort state of stories
-  let handleSort = ( sort_key ) => { setSort(sort_key) } 
+  let handleSort = React.useCallback( ( sort_key ) => { setSort(sort_key) }, [ setSort ] )
 
-  let sortFunction = SORTS[sort]
+  let sortFunction = SORTS[SORTS.indexOf(sort)][1]
   let sortedList = sortFunction(list)
   
   

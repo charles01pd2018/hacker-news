@@ -5,7 +5,6 @@ import axios from 'axios';
 import SearchForm from './components/search/search-form';
 import List from './components/result/list';
 import HeadlinePrimary from './components/headline-primary';
-import SortButtons from './components/sort-buttons';
 
 // states
 import useSemiPersistentState from './states/helper/use-semi.tsx';
@@ -66,7 +65,7 @@ let App = () => {
     event.preventDefault() // stops the entire page from reloading
   }
 
-
+  //React.useEffect( (sort_key) => { handleSort(sort_key)}, [setSort])
 
 
   return (

@@ -11,9 +11,7 @@ let HeadlinePrimary = ({ headerText }) => {
     return (
 
         <div className='headlinePrimary'>
-
             <h1>{ headerText }</h1>
-
         </div>
     ) 
 }

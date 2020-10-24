@@ -10,7 +10,7 @@ let InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, chil
 
   let inputRef = React.useRef()
 
-  React.useEffect(() => { if (isFocused) inputRef.current.focus() }, [isFocused]) // storing the search input focus state
+  React.useEffect(() => { if (isFocused) inputRef.current.focus() }, [isFocused]) // focuses the search input on load
 
   return (
 
@@ -23,7 +23,7 @@ let InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, chil
       </span>
       
     </div>
-  );
-};
+  )
+}
 
 export default InputWithLabel

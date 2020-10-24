@@ -1,6 +1,12 @@
-//  Returns the appropriate object based off the fetched data
+//  Returns object representing stories state
 
 let storiesReducer = (state, action) => {
+    `
+    ...state: 
+    isLoading: loading status from api fetching
+    isError: error status from api fetching
+    data: stories data in list form
+    `
 
     switch (action.type) {
       case 'STORIES_FETCH_INIT':
@@ -24,17 +30,19 @@ let storiesReducer = (state, action) => {
           isLoading: false,
           isError: true,
         }
-  
+      
+      // returns updated story list
       case 'REMOVE_STORY':
         return {
           ...state,
+          // updates stories data array - filters by story ID
           data: state.data.filter(
             story => action.payload.objectID !== story.objectID
           ),
         }
   
       default:
-        throw new Error();
+        throw new Error()
     }
   }
 

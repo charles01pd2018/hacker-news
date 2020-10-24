@@ -10,13 +10,16 @@ let SortButtons = (handleSort) => {
 
     let sort_buttons = []
 
-    for (let sortType in SORTS ) {
+    // skipping the first 'NONE' element
+    for (let [sortType, sortFunction] of SORTS.slice(1)) {
 
         console.log(sortType)
-        console.log()
+
+        // pushing sort buttons into the list
         sort_buttons.push(
 
         <span className='button'>
+
             <button className='buttonSmall' type='button' onClick={ () => handleSort(sortType) }>
             {sortType}
             </button>
