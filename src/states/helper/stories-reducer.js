@@ -1,12 +1,13 @@
 //  Returns object representing stories state
 
+
 let storiesReducer = (state, action) => {
-    `
-    ...state: 
-    isLoading: loading status from api fetching
-    isError: error status from api fetching
-    data: stories data in list form
-    `
+  /*
+  ...state: 
+  isLoading: loading status from api fetching
+  isError: error status from api fetching
+  data: stories data in list form
+  */
 
     switch (action.type) {
       case 'STORIES_FETCH_INIT':

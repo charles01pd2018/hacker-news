@@ -6,9 +6,15 @@ import SearchForm from './components/search/search-form';
 import List from './components/result/list';
 import HeadlinePrimary from './components/headline-primary';
 
+
 // states
+
+// state helpers
 import useSemiPersistentState from './states/helper/use-semi.tsx';
 import storiesReducer from './states/helper/stories-reducer';
+
+// handlers
+//import { handleRemoveStory, handleSearchInput, handleSearchSubmit } from './states/handlers.'
 
 // styles
 import './scss/app.scss';
@@ -49,7 +55,7 @@ let App = () => {
     }
   }, [url])
 
-  // initiates api fetch
+  // initiates api fetch when async function handleFetchStories triggers
   React.useEffect( () => { handleFetchStories() }, [ handleFetchStories ] )
 
   // handles user removing stores with the 'Dismiss' button
@@ -60,12 +66,10 @@ let App = () => {
 
   // handles the user search submit
   let handleSearchSubmit = event => { 
-    setUrl( `${API_ENDPOINT}${searchTerm}` ) 
+  setUrl( `${API_ENDPOINT}${searchTerm}` ) 
 
-    event.preventDefault() // stops the entire page from reloading
+  event.preventDefault() // stops the entire page from reloading
   }
-
-  //React.useEffect( (sort_key) => { handleSort(sort_key)}, [setSort])
 
 
   return (

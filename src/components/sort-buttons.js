@@ -11,7 +11,7 @@ let SortButtons = (handleSort) => {
     let sort_buttons = []
 
     // skipping the first 'NONE' element
-    for (let [sortType, sortFunction] of SORTS.slice(1)) {
+    for (let sortType in SORTS) {
 
         console.log(sortType)
 

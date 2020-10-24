@@ -16,9 +16,10 @@ let List = ({ list, onRemoveItem }) => {
   let [sort, setSort] = React.useState('NONE')
 
   // handler for chainging sort state of stories
-  let handleSort = React.useCallback( ( sort_key ) => { setSort(sort_key) }, [ setSort ] )
+  let handleSort = ( sort_key ) => { setSort(sort_key) }
 
-  let sortFunction = SORTS[SORTS.indexOf(sort)][1]
+  // getting the sorted list from the sort state
+  let sortFunction = SORTS[sort]
   let sortedList = sortFunction(list)
   
   

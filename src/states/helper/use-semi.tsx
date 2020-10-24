@@ -4,11 +4,11 @@ import React from 'react';
 
 
 let useSemiPersistentState = (key: string, initialState: string) => {
-    `
+    /*
     ! NOTE ! 
     the isMounted state only adds efficiency when the useEffect function outweighs the compute power
     of checking the isMounted state each iteration.
-    `
+    */
 
     // on first load there will be no user mounted search term
     let isMounted = React.useRef(false) 
