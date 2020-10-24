@@ -61,9 +61,10 @@ let App = () => {
 
   // handles the user search submit
   let handleSearchSubmit = event => { 
-  setUrl( `${API_ENDPOINT}${searchTerm}` ) 
 
-  event.preventDefault() // stops the entire page from reloading
+    event.preventDefault() // stops the entire page from reloading
+
+    setUrl( `${API_ENDPOINT}${searchTerm}` ) 
   }
 
 
