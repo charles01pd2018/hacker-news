@@ -17,3 +17,8 @@ Alternatively, functions are passed as props to handle certain state changes.
 ## What the web app looks like:
 
 # ![Hacker News Demo](/public/assets/creatives/demo.png)
+
+## Dependencies
+npm install axios
+npm install lodash
+npm install typescript --save-dev
